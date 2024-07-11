@@ -1,0 +1,26 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - name: link_2
+    properties: {text: Sig In, icon: 'fa:first-order'}
+    type: Link
+    layout_properties: {}
+- name: link_1
+  properties: {text: UNImat, align: center, bold: true}
+  type: Link
+  layout_properties: {slot: title}
+- name: image_1
+  properties: {source: _/theme/403d75ef5edbc20b29c04ed38e33c182-removebg-preview.png, height: 51}
+  type: Image
+  layout_properties: {slot: top-left-btn}

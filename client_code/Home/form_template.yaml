@@ -1,0 +1,7 @@
+container: {type: ColumnPanel}
+components:
+- name: image_1
+  properties: {source: _/theme/403d75ef5edbc20b29c04ed38e33c182-removebg-preview-removebg-preview.png, height: 133}
+  type: Image
+  layout_properties: {grid_position: 'XCWNGA,SYASII'}
+is_package: true
