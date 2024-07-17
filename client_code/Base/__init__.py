@@ -14,7 +14,7 @@ class Base(BaseTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.Signin_text()
-    self.content_panel.add_component(Home())
+    self.go_to_home()
 
     # Any code you write here will run before the form opens.
 
@@ -22,23 +22,30 @@ class Base(BaseTemplate):
     user = anvil.users.get_user()
     if user:
       email = user["email"]
-      self.Signin_text = email
+      self.link_2.text = email
     else:
-      self.Signin = "Sign In"
+      self.link_2.text = "Sign In"
 
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
 
   def link_2_click(self, **event_args):
     """This method is called when the link is clicked"""
-    anvil.users.login_with_form()
-    
+    user = anvil.users.get_user()
+    if user:
+      logout = confirm("Do you want to log out?")
+      if logout:
+        anvil.users.logout()
+        self.go_to_home()
+    else:
+      anvil.users.login_with_form()
+      self.Signin_text()
+
+  def go_to_home(self):
+    self.content_panel.clear()
+    self.content_panel.add_component(Home())
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
-    self.content_panel.clear()
-    self.content_panel.add_component(Home())
+    self.go_to_home()
 
 
   def link_3_click(self, **event_args):
