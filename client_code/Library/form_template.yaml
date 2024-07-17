@@ -1,0 +1,7 @@
+container: {type: ColumnPanel}
+components:
+- name: headline_1
+  properties: {role: headline, text: Library page}
+  type: Label
+  layout_properties: {grid_position: 'JSKJTP,FVFTFI'}
+is_package: true
