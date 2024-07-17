@@ -50,4 +50,24 @@ db_schema:
     - name: signed_up
       admin_ui: {order: 7, width: 200}
       type: datetime
+    - name: Course
+      admin_ui: {width: 200, order: 8}
+      type: simpleObject
     title: Users
+  course:
+    client: none
+    server: full
+    columns:
+    - name: Name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: Discription
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: Image
+      admin_ui: {width: 200, order: 2}
+      type: media
+    - name: id_name
+      admin_ui: {width: 200, order: 3}
+      type: string
+    title: course

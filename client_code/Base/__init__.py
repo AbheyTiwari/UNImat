@@ -25,6 +25,7 @@ class Base(BaseTemplate):
       self.link_2.text = email
     else:
       self.link_2.text = "Sign In"
+    self.saved_button_change()
 
 
   def link_2_click(self, **event_args):
@@ -37,8 +38,11 @@ class Base(BaseTemplate):
         self.go_to_home()
     else:
       anvil.users.login_with_form()
-      self.Signin_text()
+    self.Signin_text()
 
+  def saved_button_change(self):
+    self.link_3.visible = anvil.users.get_user() is not None
+  
   def go_to_home(self):
     self.content_panel.clear()
     self.content_panel.add_component(Home())
