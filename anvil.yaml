@@ -61,9 +61,6 @@ db_schema:
     - name: Name
       admin_ui: {width: 200, order: 0}
       type: string
-    - name: Discription
-      admin_ui: {width: 200, order: 1}
-      type: string
     - name: Image
       admin_ui: {width: 200, order: 2}
       type: media

@@ -7,6 +7,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
+from ..display_course import display_course
 
 
 class Library(LibraryTemplate):
@@ -20,4 +21,5 @@ class Library(LibraryTemplate):
   def load_course(self):
     courses = anvil.server.call("get_course_detail").search()
     for course in courses:
-      print(course["Name"])
+      c= display_course(name=course["Name"], butoon_text="study Now", image=course["Image"])
+      self.conent_panel.add_component(c)

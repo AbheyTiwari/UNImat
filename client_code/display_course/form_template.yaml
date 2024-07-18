@@ -1,0 +1,25 @@
+container: {type: ColumnPanel}
+components:
+- name: content_panel
+  properties: {role: card, col_widths: '{}'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'HMDLGA,QBNWJP'}
+  components:
+  - name: image_content
+    properties: {}
+    type: Image
+    layout_properties: {grid_position: 'ZMDBRA,JWWDES'}
+  - name: name_1
+    properties: {text: BSC shjkds, align: center, bold: true, font_size: 22}
+    type: Label
+    layout_properties: {grid_position: 'CRVAXX,TNYSAE'}
+  - name: study_now
+    properties: {text: Study Now !, bold: true, role: primary-color}
+    type: Button
+    layout_properties: {grid_position: 'TCIBXB,DRFEOK'}
+is_package: true
+custom_component: true
+properties:
+- {name: name, type: string, default_value: '', important: true, default_binding_prop: true}
+- {name: image, type: object, important: true, description: Image of course}
+- {name: prop_3, type: object, important: true, description: call something maybe I will remove this}
