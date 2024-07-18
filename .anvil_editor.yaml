@@ -5,7 +5,8 @@ unique_ids:
     Library: '1721208708287595580544593.5948'
     Saved: '1721208672648417934267930.6146'
   modules: {}
-  server_modules: {}
+  server_modules:
+    couse_detatails: '1721302993844425268295696.0392'
   assets:
     403d75ef5edbc20b29c04ed38e33c182-removebg-preview-removebg-preview.png: '1720703265380715533942325.8405'
     403d75ef5edbc20b29c04ed38e33c182-removebg-preview.png: '1720702923889252498021391.73004'
