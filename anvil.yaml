@@ -70,4 +70,7 @@ db_schema:
     - name: id_name
       admin_ui: {width: 200, order: 3}
       type: string
+    - name: PDF
+      admin_ui: {order: 2.5, width: 200}
+      type: media
     title: course
