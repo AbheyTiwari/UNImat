@@ -9,14 +9,23 @@ from anvil.tables import app_tables
 import anvil.users
 from ..Home import Home
 
+
 class Base(BaseTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.Signin_text()
     self.go_to_home()
 
     # Any code you write here will run before the form opens.
 
+  def Signin_text(self):
+    user = anvil.users.get_user()
+    if user:
+      email = user["email"]
+      self.link_2.text = email
+    else:
+      self.link_2.text = "Sign In"
 
 
   def link_2_click(self, **event_args):
@@ -29,9 +38,8 @@ class Base(BaseTemplate):
         self.go_to_home()
     else:
       anvil.users.login_with_form()
+    self.Signin_text()
 
-  def saved_button_change(self):
-    self.link_3.visible = anvil.users.get_user() is not None
   
   def go_to_home(self):
     self.content_panel.clear()
@@ -45,3 +53,4 @@ class Base(BaseTemplate):
   def link_3_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
+    self.content_panel.add_component(Saved())
