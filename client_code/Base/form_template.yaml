@@ -13,11 +13,6 @@ components:
   name: navbar_links
   layout_properties: {slot: nav-right}
   components:
-  - name: link_3
-    properties: {text: Saved, icon: 'fa:life-saver', visible: true}
-    type: Link
-    layout_properties: {}
-    event_bindings: {click: link_3_click}
   - name: link_2
     properties: {text: Sig In, icon: 'fa:first-order', visible: true}
     type: Link
